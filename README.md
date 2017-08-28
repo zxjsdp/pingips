@@ -8,7 +8,7 @@ Simple GUI (JavaFX) tool to ping multiple IPs.
 
         $ gradle jar
         
-2. Run jar application:
+2. Run jar:
 
         $ java -jar build/libs/pingips.jar
 
