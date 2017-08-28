@@ -1,0 +1,22 @@
+.root {
+    -fx-background-color: aliceblue;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+#titleText {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+#subTitleLabel {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+
+#rightTextArea {
+    -fx-font-family: "Menlo", "Consolas", monospace;
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import org.fxmisc.richtext.CodeArea?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.moflying.PingController"
+          prefHeight="400.0" prefWidth="600.0">
+    <stylesheets>
+        <URL value="@/ping.css"/>
+    </stylesheets>
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <rowConstraints>
+        <RowConstraints vgrow="NEVER" prefHeight="45"/>
+        <RowConstraints vgrow="NEVER" prefHeight="30"/>
+        <RowConstraints vgrow="NEVER" prefHeight="30"/>
+        <RowConstraints vgrow="NEVER" prefHeight="30"/>
+        <RowConstraints percentHeight="Infinity" vgrow="ALWAYS"/>
+    </rowConstraints>
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+    </columnConstraints>
+
+    <!-- Row 1: Left & Right -->
+
+    <Text fx:id="titleText" text="Ping IPs" lineSpacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="4"/>
+
+    <!-- Row 2: Left -->
+
+    <HBox alignment="CENTER_LEFT"
+          GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="1">
+        <Button fx:id="pingButton" text="Start Ping!" onAction="#pingIPsButton"/>
+    </HBox>
+
+    <HBox fx:id="leftClearButton" alignment="CENTER_RIGHT"
+          GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="1">
+        <Button text="Clear" onAction="#clearLeftTextArea"/>
+    </HBox>
+
+    <!-- Row 2: Right -->
+
+    <HBox fx:id="rightCopyButton" alignment="CENTER_LEFT"
+          GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="1">
+        <Button text="Copy result"/>
+    </HBox>
+
+    <HBox fx:id="rightClearButton" alignment="CENTER_RIGHT"
+          GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.columnSpan="1">
+        <Button text="Clear" onAction="#clearRightTextArea"/>
+    </HBox>
+
+    <!-- Row 3: Left -->
+
+    <Label text="${timeoutSlider.value}" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <Slider fx:id="timeoutSlider" min="10" max="2000" value="300" blockIncrement="50" GridPane.columnIndex="1"
+            GridPane.rowIndex="2"/>
+
+    <!-- Row 4: Left -->
+
+    <Label text="-" fx:id="leftResultLabel" lineSpacing="10" GridPane.columnIndex="0" GridPane.rowIndex="3"
+           GridPane.columnSpan="2" prefHeight="30"/>
+    <Label text="-" fx:id="rightResultLabel" lineSpacing="10" GridPane.columnIndex="2" GridPane.rowIndex="3"
+           GridPane.columnSpan="2" prefHeight="30"/>
+
+    <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"
+          GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS">
+        <ScrollPane fitToWidth="true" fitToHeight="true" prefWidth="400" prefHeight="400">
+            <TextArea fx:id="leftTextArea" prefWidth="400" prefHeight="400" wrapText="true"/>
+        </ScrollPane>
+    </VBox>
+
+    <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.columnSpan="2"
+          GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS">
+        <ScrollPane fitToWidth="true" fitToHeight="true" prefWidth="400" prefHeight="400">
+            <TextArea fx:id="rightTextArea" prefWidth="400" prefHeight="400" wrapText="true" editable="false"/>
+        </ScrollPane>
+    </VBox>
+</GridPane>
