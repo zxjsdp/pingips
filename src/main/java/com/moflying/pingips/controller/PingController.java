@@ -33,7 +33,7 @@ public class PingController {
     @FXML
     protected void ping() {
         Executors.newSingleThreadExecutor().submit(() -> {
-            this.leftResultLabel.setText("Ping start...");
+            Platform.runLater(() -> this.leftResultLabel.setText("Ping start..."));
             String content = this.leftTextArea.getText();
             if (StringUtils.isEmpty(content)) {
                 Platform.runLater(() -> this.leftResultLabel.setText("Blank content!"));
@@ -67,10 +67,11 @@ public class PingController {
     @FXML
     protected void tcping() {
         Executors.newSingleThreadExecutor().submit(() -> {
-            this.leftResultLabel.setText("TCPing start...");
+            Platform.runLater(() -> this.leftResultLabel.setText("TCPing start..."));
             String content = this.leftTextArea.getText();
             if (StringUtils.isEmpty(content)) {
                 Platform.runLater(() -> this.leftResultLabel.setText("Blank content!"));
+                return;
             }
 
             content = content.trim();
