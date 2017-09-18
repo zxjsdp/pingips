@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
-import sun.net.util.IPAddressUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +14,11 @@ import java.util.List;
 public class SocketAddress {
     private String ip;
     private int port;
+
+    @Override
+    public String toString() {
+        return String.format("%s:%d", ip, port);
+    }
 
     SocketAddress(String ip, String portString) {
         int port = 0;
