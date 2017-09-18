@@ -10,7 +10,7 @@
 <?import org.fxmisc.richtext.CodeArea?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="com.moflying.PingController"
+          fx:controller="com.moflying.pingips.controller.PingController"
           prefHeight="400.0" prefWidth="600.0">
     <stylesheets>
         <URL value="@/ping.css"/>

@@ -1,6 +1,7 @@
-package com.moflying;
+package com.moflying.pingips.controller;
 
-import com.moflying.struct.SocketAddress;
+import com.moflying.pingips.struct.SocketAddress;
+import com.moflying.pingips.utils.CommandUtil;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

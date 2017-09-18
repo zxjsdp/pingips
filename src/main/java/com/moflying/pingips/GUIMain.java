@@ -1,4 +1,4 @@
-package com.moflying;
+package com.moflying.pingips;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

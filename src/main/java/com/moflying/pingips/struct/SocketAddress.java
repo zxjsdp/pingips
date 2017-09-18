@@ -1,4 +1,4 @@
-package com.moflying.struct;
+package com.moflying.pingips.struct;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

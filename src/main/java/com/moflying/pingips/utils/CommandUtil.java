@@ -1,4 +1,4 @@
-package com.moflying;
+package com.moflying.pingips.utils;
 
 import org.apache.commons.lang3.math.NumberUtils;
 import sun.net.util.IPAddressUtil;
