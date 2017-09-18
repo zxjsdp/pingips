@@ -17,7 +17,6 @@ public class GUIMain extends Application {
 
     @Override
     public void stop() throws Exception {
-        PingController.cachedThreadPool.shutdown();
     }
 
     public static void main(String[] args) {

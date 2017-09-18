@@ -17,6 +17,6 @@
     -fx-font-weight: bold;
 }
 
-#rightTextArea {
+#leftTextArea, #rightTextArea {
     -fx-font-family: "Menlo", "Consolas", monospace;
 }

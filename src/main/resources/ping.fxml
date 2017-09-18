@@ -44,7 +44,7 @@
 
     <HBox alignment="CENTER_LEFT"
           GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="1">
-        <Button fx:id="pingButton" text="Start Ping!" onAction="#pingIPsButton"/>
+        <Button fx:id="pingButton" text="Start Ping!" onAction="#ping"/>
     </HBox>
 
     <HBox fx:id="leftClearButton" alignment="CENTER_RIGHT"
@@ -66,9 +66,16 @@
 
     <!-- Row 3: Left -->
 
-    <Label text="${timeoutSlider.value}" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <HBox alignment="CENTER_LEFT"
+          GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="1">
+        <Button fx:id="tcpingButton" text="Start TCPing!" onAction="#tcping"/>
+    </HBox>
 
-    <Slider fx:id="timeoutSlider" min="10" max="2000" value="300" blockIncrement="50" GridPane.columnIndex="1"
+    <!-- Row 3: Right -->
+
+    <Label text="${timeoutSlider.value}" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+    <Slider fx:id="timeoutSlider" min="100" max="1000" value="300" blockIncrement="50" GridPane.columnIndex="3"
             GridPane.rowIndex="2"/>
 
     <!-- Row 4: Left -->
