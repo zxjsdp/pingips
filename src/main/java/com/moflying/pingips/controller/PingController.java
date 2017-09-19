@@ -15,7 +15,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class PingController {
-    private static final String MISSION_SEPARATOR = "\n===================================\n";
+    private static final String PING_RESULT_SEPARATOR = "\n================ PING ================\n";
+    private static final String TCPING_RESULT_SEPARATOR = "\n================ TCPING ================\n";
+
     public static final int THREAD_POOL_SIZE = 30;
 
     @FXML
@@ -49,7 +51,7 @@ public class PingController {
                 return;
             }
 
-            this.rightTextArea.appendText(generateTimeInfo());
+            this.rightTextArea.appendText(PING_RESULT_SEPARATOR);
 
             ExecutorService executorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
             for (String ip : ips) {
@@ -83,7 +85,7 @@ public class PingController {
             }
             List<SocketAddress> socketAddresses = SocketAddress.toSocketAddresses(ipAndPorts);
 
-            this.rightTextArea.appendText(generateTimeInfo());
+            this.rightTextArea.appendText(TCPING_RESULT_SEPARATOR);
 
             ExecutorService executorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
             for (SocketAddress socketAddress : socketAddresses) {
@@ -132,9 +134,5 @@ public class PingController {
     protected void clearRightTextArea() {
         this.rightTextArea.setText("");
         this.rightResultLabel.setText("Cleared!");
-    }
-
-    private static String generateTimeInfo() {
-        return MISSION_SEPARATOR;
     }
 }

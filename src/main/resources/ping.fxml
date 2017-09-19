@@ -6,8 +6,6 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
-<?import org.fxmisc.richtext.CodeArea?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="com.moflying.pingips.controller.PingController"

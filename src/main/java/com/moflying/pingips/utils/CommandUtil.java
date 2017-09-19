@@ -15,7 +15,7 @@ public class CommandUtil {
         }
 
         if (!inetAddressValidator.isValid(ip)) {
-            return " invalid > " + ip;
+            return " invalid . " + ip;
         }
 
         try {
@@ -35,11 +35,11 @@ public class CommandUtil {
         }
 
         if (!inetAddressValidator.isValid(ip)) {
-            return " invalid > " + ip;
+            return " invalid . " + ip;
         }
 
         if (port <= 0) {
-            return " invalid > " + ip;
+            return " invalid . " + ip;
         }
 
         try {
