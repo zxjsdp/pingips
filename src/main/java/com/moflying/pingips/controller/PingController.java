@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class PingController {
     private static final String MISSION_SEPARATOR = "\n===================================\n";
+    public static final int THREAD_POOL_SIZE = 30;
 
     @FXML
     private Button pingButton;
@@ -50,7 +51,7 @@ public class PingController {
 
             this.rightTextArea.appendText(generateTimeInfo());
 
-            ExecutorService executorService = Executors.newFixedThreadPool(50);
+            ExecutorService executorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
             for (String ip : ips) {
                 executorService.submit(() -> ping(ip));
             }
@@ -84,7 +85,7 @@ public class PingController {
 
             this.rightTextArea.appendText(generateTimeInfo());
 
-            ExecutorService executorService = Executors.newFixedThreadPool(20);
+            ExecutorService executorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
             for (SocketAddress socketAddress : socketAddresses) {
                 executorService.submit(() -> tcping(socketAddress));
             }

@@ -1,20 +1,20 @@
 package com.moflying.pingips.utils;
 
-import org.apache.commons.lang3.math.NumberUtils;
-import sun.net.util.IPAddressUtil;
+import org.apache.commons.validator.routines.InetAddressValidator;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class CommandUtil {
     private static Runtime runtime = Runtime.getRuntime();
+    private static final InetAddressValidator inetAddressValidator = new InetAddressValidator();
 
     public static String ping(String ip, double timeoutSecond) {
         if (timeoutSecond <= 0) {
             timeoutSecond = 0.3;
         }
 
-        if (!IPAddressUtil.isIPv4LiteralAddress(ip)) {
+        if (!inetAddressValidator.isValid(ip)) {
             return " invalid > " + ip;
         }
 
@@ -34,7 +34,7 @@ public class CommandUtil {
             timeoutSecond = 1;
         }
 
-        if (!IPAddressUtil.isIPv4LiteralAddress(ip)) {
+        if (!inetAddressValidator.isValid(ip)) {
             return " invalid > " + ip;
         }
 
