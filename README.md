@@ -14,7 +14,7 @@ Run jar:
 
 ## macOS application
 
-You easily create a macOS `.app` application with [gradle-macappbundle](https://github.com/crotwell/gradle-macappbundle):
+A macOS `.app` application can be easily created with [gradle-macappbundle](https://github.com/crotwell/gradle-macappbundle).
 
     $ gradle createApp
     
