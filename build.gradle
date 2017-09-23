@@ -72,8 +72,8 @@ jar {
 
 macAppBundle {
     mainClassName = "com.moflying.pingips.GUIMain"
-//    icon = "myIcon.icns"
+    icon = "static/Radium.icns"
     bundleJRE = false
     javaProperties.put("apple.laf.useScreenMenuBar", "true")
-//    backgroundImage = "doc/macbackground.png"
+//    backgroundImage = "pingips.png"
 }
